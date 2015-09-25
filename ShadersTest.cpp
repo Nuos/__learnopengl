@@ -23,7 +23,29 @@ int ShadersTest::enter()
     glewExperimental = GL_TRUE;
     glewInit();
     glViewport(0, 0, WIDTH, HEIGHT);
-
+/******************************
+vertexShader.vert
+----
+#version 330 core
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 color;
+out vec3 ourColor;
+void main()
+{
+    gl_Position = vec4(position, 1.0f);
+    ourColor = color;
+}
+///////////////////////
+fragmentShader.frag
+----
+#version 330 core
+in vec3 oruColor;
+out vec4 color;
+void main()
+{
+    color = vec4(ourColor, 1.0f);
+}
+********************************/
     Shader ourShader("../ShaderSource/vertexShader.vert", "../ShaderSource/fragmentShader.frag");
 
     //////////////////////////////////////////////////////////////////////////
