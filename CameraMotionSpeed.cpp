@@ -2,6 +2,7 @@
 #include "CameraMotionSpeed.h"
 #include "Shader.h"
 
+#include <cmath>
 #include <SOIL.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -10,14 +11,58 @@
 #ifdef __CameraMotionSpeed_
 
 const GLuint WIDTH = 800, HEIGHT = 600;
+
 bool keys[1024];
 GLfloat currentFrame = 0.0f;
 GLfloat deltaTime = 0.0f;// Time between current frame and last frame
 GLfloat lastFrame = 0.0f;// Time of last frame
 
+// camera
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+
+// yaw is initialized to -90.0f degrees
+GLfloat yaw = -90.0f;
+GLfloat pitch = 0.0f;
+GLfloat lastX = WIDTH / 2.0f;
+GLfloat lastY = HEIGHT / 2.0f;
+
+bool firstMouse = true;
+void CameraMotionSpeed::mouse_callback(GLFWwindow* window, double xpos, double ypos)
+{
+    if (firstMouse) {
+        lastX = xpos;
+        lastY = ypos;
+        firstMouse = false;
+    }
+    
+    GLfloat xoffset = xpos - lastX;
+    GLfloat yoffset = lastY - ypos;
+    lastX = xpos;
+    lastY = ypos;
+    
+    GLfloat sensitivity = 0.05f;// change this value to your linking
+    xoffset *= sensitivity;
+    yoffset *= sensitivity;
+    
+    yaw += xoffset;
+    pitch += yoffset;
+    
+    // bounds checking
+    if (pitch > 89.0f) {
+        pitch = 89.0f;
+    }
+    if (pitch < -89.0f) {
+        pitch = -89.0f;
+    }
+    
+    glm::vec3 front;
+    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+    front.y = sin(glm::radians(pitch));
+    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+    cameraFront = glm::normalized(front);
+}
 
 
 void CameraMotionSpeed::do_movement()
@@ -59,10 +104,17 @@ int CameraMotionSpeed::enter()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
+    
     GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "learnopengl...", nullptr, nullptr);
     glfwMakeContextCurrent(window);
+    
     glfwSetKeyCallback(window, key_callback);
+    glfwSetCursorPosCallback(window, mouse_callback);
+    
+    // GLFW Options
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glewExperimental = GL_TRUE;
+    
     glewInit();
     glViewport(0, 0, WIDTH * 2, HEIGHT * 2);
     glEnable(GL_DEPTH_TEST);
