@@ -29,5 +29,6 @@ public:
     static void do_movement();
     static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
     static int enter();
+    static void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 };
 #endif // __CameraMotionSpeed_
