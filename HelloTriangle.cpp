@@ -13,7 +13,7 @@ const size_t locationPos/**/ = 15;// value ranging from [0, 15] is valid.!!!!!!!
 const GLchar* vertexShaderSource =
 "#version 330 core\n\
 //layout (location = 0) in vec3 position;\n\
-layout (location/**/ = 15) in vec3 position;\n\   
+layout (location/**/ = 15) in vec3 position;\n\ ////*********************
 void main()\n\
 {\n\
 gl_Position = vec4(position.x, position.y, position.z, 1.0f);\n\
@@ -73,9 +73,9 @@ int HelloTriangle::enter()
     // register VBO as the currently bound vertex buffer object
 
     //glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
-    glVertexAttribPointer(locationPos/**/, 3, GL_FLOAT, GL_TRUE, 3 * sizeof(GLfloat), (GLvoid*)0);//*****************
+    glVertexAttribPointer(locationPos/**/, 3, GL_FLOAT, GL_TRUE, 3 * sizeof(GLfloat), (GLvoid*)0);////*****************
     //glEnableVertexAttribArray(0);
-    glEnableVertexAttribArray(locationPos/**/);//***********************
+    glEnableVertexAttribArray(locationPos/**/);////***********************
     glBindBuffer(GL_ARRAY_BUFFER, 0);// unbind VBO
     glBindVertexArray(0);// unbind VAO
 
