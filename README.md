@@ -9,3 +9,9 @@ http://bullteacher.com/category/zh_learnopengl_com
 
 [Source version]
 http://www.learnopengl.com/
+
+[libs]
+glew-1.13.0
+glfw-3.1.1
+glm-0.9.7.1
+soil
