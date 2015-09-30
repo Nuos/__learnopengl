@@ -30,15 +30,31 @@ color = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n\
 int HelloTriangle::enter()
 {
     glfwInit();
+    
+    /*****************************************************************
+      * configure Options of GLFW(Target) using glfwWindowHint
+      * arg0. specifies what option(glfw_**) to configure
+      * arg1. set the value of our options specified by the arg0.
+      ***/
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
+    
+    /*******************************************************************
+      * create an object of GLFWwindow
+      *    that we can use for GLFW's functions...
+      ******************************************************/
     GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "LearnOpenGL...", nullptr, nullptr);
-    glfwSetKeyCallback(window, key_callback);
     glfwMakeContextCurrent(window);
+    
+    // register callback functions
+    glfwSetKeyCallback(window, key_callback);
+    
     glewExperimental = GL_TRUE;
+    
     glewInit();
+    
     glViewport(0, 0, WIDTH, HEIGHT);
 
     //////////////////////////////////////////////////////////////////////////
