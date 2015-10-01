@@ -51,27 +51,39 @@ int HelloTriangle::enter()
     // register callback functions
     glfwSetKeyCallback(window, key_callback);
     
+    // hence GLEW knows to use a modern approach to retrieving function pointers and extensions
     glewExperimental = GL_TRUE;
     
+    // initialize GLER(?opengl-target) to setup the opengl function pointers
     glewInit();
-    
     glViewport(0, 0, WIDTH, HEIGHT);
 
     //////////////////////////////////////////////////////////////////////////
+    // a shader program object is the final linked version of multiple shaders combined..
+    // to use recently compiled shaders we have to link them to a shader program object
+    // and tehn activate this shader program when rendering objects
+    
     // build and compile our shader program
+    // VShader  create shader-object referenced by ID
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
     glCompileShader(vertexShader);
+    // FShader create shader-object referenced by ID
     GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
     glCompileShader(fragmentShader);
+    // link shaders
+    // create program-object referenced by  ID
     GLuint shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertexShader);
     glAttachShader(shaderProgram, fragmentShader);
     glLinkProgram(shaderProgram);
+    
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
+    //////////////////////////////////////////////////////////////////////////////
+    // setup vertex data(vertices) and buffers(VBO) and attribute pointers(0)
     GLfloat vertices[] = {
         -0.5f, -0.5f, 0.0f,
          0.5f, -0.5f, 0.0f,
