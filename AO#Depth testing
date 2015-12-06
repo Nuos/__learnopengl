@@ -59,7 +59,7 @@ OpenGL allows us to disable writing to the depth-buffer by setting its depth mas
   glDepthMask(gl_false)
   $$ NOTE that this only has effect if depth testing is enabled
 ，，，
-    #END
+    #END___________________________________________________________________________________________________________________________
 ### Depth testing 
 
 
@@ -119,12 +119,62 @@ Just like the depth testing's glDepthMask() function,
     glStencilMask(0x00);  //each bit ends up as 0 in the stencil buffer (disabling writes)
 
 ，，，
-    #END
+    #END___________________________________________________________________________________________________________________________
 ### Stencil testing 
+
+
+### Blending
+    #BEGIN
+，，，
+Blending in OpenGL is also commonly known as the technique to implement transparency within object
+
+Transparency is all about object (or parts of them) not having a solid color
+  BUT having a combination of colors from the object itself
+  AND any other object behind it with varying intensity
+
+A colored glass window is a transparent object
+  THE glass has a color of its own
+    BUT the resulting color contains the colors of all the objects behind the glass as well
+  THIS is also where the name blending comes from
+    SINCE we blend several colors (of different objetcts) to a single color
+
+Transparency thus allows us to see through objects
+    
+    ，，，，，，，，，
+    | Transparency, most likely refer to the following:
+    |     ##1 the physical property of allowing the transmission of light through a material
+    |     ##2 Capable of transmitting light so that objects or images can be seen as if there were no intervening material
+    |     ##3
+    ，，，，，，，，，
+
+，，，
+Transparent objects can be completely transparent (it lets all colors through)
+  OR partially transparent (it lets colors through, but also shows some of its own colrs)
+
+The amount of transparency of an object is defined by its color's alpha-value
+  THE alpha-color-value is the 4th component of a color vector
+  THAT you've probably seen quite often now.
+  UNTIL this tutorial, we've always kept this 4th component at a value of 1.0 giving the object 0.0 transparency
+  WHILE an alpha value of 0.0 would result in the object having complete transparency
+  AN alpha value of 0.5 tells us the object's color consist of 50% of its-own-color and 50% of the-colors behind the object
+  
+，，，
+The textures we've used so far all consisted of 3 color components: Red, Green and Blue
+  BUT some textures also have an embeded alpha channel that contains an alpha value per texel
+  
+This alpha value tells us exactly which parts of the texture have transparency and by how much
+
+    ，，，，，，，，，
+    | Alpha:
+    |     ##1 alpha composit https://en.wikipedia.org/wiki/Alpha_compositing
+    |     ##2 alpha channel  
+    ，，，，，，，，，
+    #END___________________________________________________________________________________________________________________________
+### Blending
 
 
 ### TITLE
     #BEGIN
-                  
-    #END
+
+    #END___________________________________________________________________________________________________________________________
 ### TITLE
