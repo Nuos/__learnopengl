@@ -1,0 +1,41 @@
+
+### Depth testing 
+                  #BEGIN
+
+、、、  
+In the coordinate systems tutorial we've rendered a 3D container and 
+  MADE use of a depth buffer to prevent faces rendering to the front while they're behind other faces
+  
+In this tutorial we're going to elaborate a bit more on these depth values
+  HOW the depth buffer (or z-buffer) is storing and
+  HOW it actually determines if a fragment is indeed behind other fragments
+
+、、、
+The depth-buffer is a buffer that, 
+  JUST like the color-buffer (that stores all the fragment colors:the visual output),stores info. per fragment
+  AND (usually) has the same width and height as the color-buffer
+
+The depth-buffer is automatically created by the windowing system
+  AND stores its depth values as 16, 24 or 32 bit floats
+  In most systems you'll see a depth-buffer with a precision of 24 bits
+
+、、、
+When depth testing is enabled OpenGL tests the depth value of a fragment against the content of the depth-buffer
+OpenGL performs a depth test
+  AND if this test passes, the depth-buffer is updated with the new depth value
+  IF the depth test fails, the fragment is discarded
+
+、、、
+Depth testing is done in screen space after the fragment shader has run
+  (AND after stencil testing has run which we'll discuss in the next tutorial)
+
+The screen space coordinates relate directly to the viewport defined by OpenGL's glViewport() function
+  AND can be accessed via GLSL's build-in gl_FragCoord variable in the fragment shader
+
+The x and y components of gl_FragCoord represent the fragment's screen-space coordinates (with (0,0) being the BL corner)
+The gl_FragCoord also contains a z-component which contains the actual depth value of the fragment.
+  THIS z value is the value that is compared to the depth buffer's content
+
+                  #END
+### Depth testing 
+
