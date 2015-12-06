@@ -2,7 +2,7 @@
 ### Depth testing 
                   #BEGIN
 
-、、、  
+，，，
 In the coordinate systems tutorial we've rendered a 3D container and 
   MADE use of a depth buffer to prevent faces rendering to the front while they're behind other faces
   
@@ -10,7 +10,7 @@ In this tutorial we're going to elaborate a bit more on these depth values
   HOW the depth buffer (or z-buffer) is storing and
   HOW it actually determines if a fragment is indeed behind other fragments
 
-、、、
+，，，
 The depth-buffer is a buffer that, 
   JUST like the color-buffer (that stores all the fragment colors:the visual output),stores info. per fragment
   AND (usually) has the same width and height as the color-buffer
@@ -19,13 +19,13 @@ The depth-buffer is automatically created by the windowing system
   AND stores its depth values as 16, 24 or 32 bit floats
   In most systems you'll see a depth-buffer with a precision of 24 bits
 
-、、、
+，，，
 When depth testing is enabled OpenGL tests the depth value of a fragment against the content of the depth-buffer
 OpenGL performs a depth test
   AND if this test passes, the depth-buffer is updated with the new depth value
   IF the depth test fails, the fragment is discarded
 
-、、、
+，，，
 Depth testing is done in screen space after the fragment shader has run
   (AND after stencil testing has run which we'll discuss in the next tutorial)
 
@@ -36,6 +36,95 @@ The x and y components of gl_FragCoord represent the fragment's screen-space coo
 The gl_FragCoord also contains a z-component which contains the actual depth value of the fragment.
   THIS z value is the value that is compared to the depth buffer's content
 
-                  #END
+，，，
+Depth testing is disabled by default so to enable depth testing we need to enable it with the GL_DEPTH_TEST option
+  glEnable(gl_depth_test)
+
+Once enabled 
+  OpenGL automatically stores fragments their z-values in the depth-buffer if they passed the depth  test
+  AND discards fragments if they failed the depth test accordingly
+
+If you have depth testing enabled 
+  YOU should also clear the depth-buffer before each render-iteration using the GL_DEPTH_BUFFER_BIT
+  OTHERWISE you're stuck with the written depth values from last render iteration
+  glClear(gl_color_buffer_bit | gl_depth_buffer_bit)
+  
+，，，
+There are certain scenarios imaginable where you want to perform the depth test on all fragments and discard them accordingly
+  BUT not update the depth-buffer
+  
+Basically, you're using a read-only depth buffer
+
+OpenGL allows us to disable writing to the depth-buffer by setting its depth mask to GL_FALSE
+  glDepthMask(gl_false)
+  $$ NOTE that this only has effect if depth testing is enabled
+，，，
+    #END
 ### Depth testing 
 
+
+### Stencil testing
+    #BEGIN
+Once the fragment shader has processed the fragment
+  A so called stencil test is executed that just like the depth test
+  HAS the possibility of discarding fragments
+
+Then the remaining fragments get passed to the depth test that could possibly discard event more fragments
+
+The stencil test is based on the content of yet another buffer called the stencil-buffer 
+  THAT we're allowed to update during rendering to achieve interesting effects
+
+，，，
+A stencil-buffer (usually) contains 8-bits per stencil-value 
+  THAT amounts to a total of 256 different stencil-values per pixel/fragment
+  WE can then set the these stencil values to values of our liking
+    AND then we can discard or keep fragments whenever a particular fragment has a certain stencil-value
+
+    ，，，，，，，
+    | Each windowing library needs to set up a stencil buffer for you.
+    | GLFW does this automatically so we don't have to tell GLFW to create one,
+    |   but other windowing libraries might not create  a stencil library by default
+    |   so be sure to check your library's documentation
+    ，，，，，，，
+
+，，，
+Stencil-buffer operations allow us to set the stencil-buffer at specific values wherever we're rendering fragments
+
+By changing the content of the stencil-buffer while we're rendering, we're writing to the stencil buffer
+In the same (or following) render iterations we can then read these values to discard or pass certain fragments
+
+When using stencil buffers you can get as crazy as you like, but the general outline is usually as follows
+    ## Enable writing to the stencil buffer
+    ## Render objects, updating the content of the stencil-buffer
+    ## Disable writing to the stencil-buffer
+    ## Render (other) objects, this time discarding certain fragments based on the content of stencil-buffer
+
+By using the stencil buffer we can thus discard certain fragments based on the fragments of other drawn objects in the scene
+
+，，，
+You can enable stencil test by enabling GL_STENCIL_TEST
+  FROM that point on, all rendering calls will influence the stencil buffer in one way or another
+    glEnable(gl_stencil_test)
+    $$NOTE that you also need to clear the stencil buffer each iteration just like the color and depth buffer
+    glClear(gl_color_buffer_bit | gl_depth_buffer_bit | gl_stencil_buffer_bit)
+
+，，，
+Just like the depth testing's glDepthMask() function,
+  THERE is an equivalent function fro the stencil-buffer
+  THE function glStencilMask() allows us to set a bitmask that is ANDed with the stencil value about to be written to the buffer
+  BY default this is set to a bitmask of all 1s unaffecting the output
+  BUT if we were to set this to 0x00 all the stencil values written to the buffer end up as 0s
+  THIS is equivalent to depth testing's glDepthMask(GL_FALSE)
+    glStencilMask(0xFF);  //each bit is written to the stencil buffer as is
+    glStencilMask(0x00);  //each bit ends up as 0 in the stencil buffer (disabling writes)
+
+，，，
+    #END
+### Stencil testing 
+
+
+### TITLE
+    #BEGIN
+                  
+    #END
+### TITLE
