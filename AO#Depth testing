@@ -173,6 +173,66 @@ This alpha value tells us exactly which parts of the texture have transparency a
 ### Blending
 
 
+### Face culling
+    #BEGIN
+，，，
+You can view a cube from any position and/or direction
+  BUT you would never be able to see more than 3 faces
+
+So why would we waste the effort of actually drawing those other 3 faces that we can't even see
+If we would discard those in some way we would save more than 50% of fragment shader runs
+
+，，，
+But there's one prob. we need to solve
+  HOW do we know if a face of an object is not visible from the viewer's point of view ??
+
+If we imagine any closed shaper, each of its faces has two sides
+  EACH side would either face the user of show its back to the user
+  WHAT if we could only render the faces that are facing the viewer??
+
+，，，
+This is exactly what face-culling does
+
+OpenGL checks all tha faces that are front-facing towards the viewer
+  AND renders those while discarding all the faces that are back-facing saving us a lot of fragment shader calls
+  WE do need to tell OpenGL which of the faces we use are actually the front-faces
+  AND which faces are the back-faces
+  
+OpenGL uses a clever trick for this by analyzing the winding order of the vertex data
+，，，
+    #END___________________________________________________________________________________________________________________________
+### Face culling
+
+
+
+### Framebuffers
+    #BEGIN
+，，，
+So far we'ver used several types of screen buffers
+  A color-buffer for writing color values
+  A depth-buffer for writing depth information
+  A stencil-buffer allowing us to discard certain fragments based on some condition
+
+The combination of these buffers is called a framebuffer and is stored somewhere in memory
+
+OpenGL gives us the flexiblity to define our own framebuffers
+  AND thus define our own color
+  AND optionally a depth and stencil buffer
+
+，，，
+The rendering operations we've done so far were all done on top of the render buffers attached to the default framebuffer
+The default framebuffer is created and configured when you create your window (GLFW does this for us)
+By creating our own framebuffer we can get an additional means to render to
+
+，，，
+The application of framebuffers might not immediately make sense
+  BUT rendering your scene to a different framebuffer allows us to create mirrors in a scene 
+  OR do cool post-processing effects for eg.
+    #END___________________________________________________________________________________________________________________________
+### Framebuffers
+
+
+
 ### TITLE
     #BEGIN
 
