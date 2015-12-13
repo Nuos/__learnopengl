@@ -108,9 +108,65 @@
 		
 		Now that we've created a texture 
 		the last thing we need to do is actually attach it to the framebuffer
+
+			glFramebufferTexture2D(gl_framebuffer, 
+								   gl_color_attachment0, 
+								   gl_texture_2d,
+								   texture,
+								   0);
+
+			@param target
+				the framebuffer type -we're targeting(draw/read/OR-both)
+			@param attachment
+				the type of attachment we're going to attach
+				right now we're attaching a color attachment
+				the 0 at the end suggests we can attach more than 1 color attachment
+			@param textarget
+				the type of the texture you want to attach
+			@param texture
+				the actual texture to attach
+			@param level
+				the mipmap level
 		
-			
+		===
+		===
+		,,,
+		aside from the color attachments
+		we can also attach a depth and a stencil texture to the framebuffer object
 		
+		to attach a depth attachment we specify the attachment type as gl_depth_attachment
+		note that the texture's format and 
+		internalformat type should then become gl_depth_component to reflect the depth buffer's storage format
+		
+		to attach a stencil buffer you use gl_stencil_attachment as the second argument and
+		specify the texture's formats as gl_stencil_index
+		
+		,,,
+		it is also possible to attach both a-depth-buffer and a-stencil-buffer as a single texture
+		
+		each 32-bit value of the texture then 
+		consists for 24-bits of depth information and 8-bits of stencil information
+		
+		to attach a depth and stencil buffer as one texture we use the gl_depth_stencil_attachment type and
+		configure the texture's formats to contain combined depth and stencil value
+		
+		 an example of attaching a-depth-and-stencil-buffer as one texture to the framebuffer is given below
+			glTexImage2D(gl_texture_2d,
+						 0,
+						 gl_depth24_stencil8,
+						 800, 600,
+						 0,
+						 gl_depth_stencil,
+						 gl_usigned_int_24_8,
+						 NULL);
+			glFramebufferTexture2D( gl_framebuffer,
+									gl_depth_stencil_attachment,
+									gl_texture_2d,
+									texture,
+									0);
+
+		=== Renderbuffer object attachments
+		===
 		
 		
 		
