@@ -167,7 +167,95 @@
 
 		=== Renderbuffer object attachments
 		===
+		,,,
+		Renderbuffer objects were introduced to OpenGL 
+		after textures as a possible type of framebuffer attachments
+		so textures were the only attachments used in the good old days
+
+		Just like a texture image
+		a renderbuffer object is an actual buffer E.g. 
+			an array of bytes- integers- pixels- or whatever-
+
+		A renderbuffer object has the added advantage
+		though that it stores its data in OpenGL's native rendering format
+		making it optimized for off-screen rendering to a framebuffer
+
+		,,,
+		Renderbuffer objects store all the render data directly into their buffer
+		without any conversions to texture-specific formats
+		thus making them faster as a writeable storage medium
+
+		However- renderbuffer objects are generally write-only
+		thus you cannot read from them (like with texture-access)
+
+		It is possible to read from them via glReadPixels() though
+		that returns a specified area of pixels from the currently bound framebuffer
+		but not directly from the attachment itself
+
+		,,,
+		Because their data is already in its native format 
+		they are quite fast when writing data or simply copying their data to other buffers
+
+		Operations like switching buffers are thus quite fast when using renderbuffer objects
+
+		The glfwSwapBuffers() we've been using at the end of each render iteration
+		might as well be implemented with renderbuffer objects
+		  we simply write to a renderbuffer image
+		  and swap to the other one at the end
 		
+		Renderbuffer objects are perfect for these kind of operations
+		
+		,,,
+		Creating a renderbuffer object looks similar to the framebuffer's code
+			GLuint RBO;
+			glGenRenderbuffers(1, &RBO);
+
+		And similarly we want to bind the renderbuffer object 
+		so all subsequent renderbuffer operations affect the current RBO
+			glBindRenderBuffer(	gl_renderbuffer, 
+								RBO
+							);
+
+		,,,
+		Since renderbuffer objects are generally write-only
+		they are often used as depth and stencil attachments since 
+		most of the time we don't really need to read values from the depth and stencil buffers
+		but still care about depth-and-stencil-testing
+		
+		We need the depth-and-stencil-values for testing
+		but don't need to sample these values so a renderbuffer object suits this perfectly
+		
+		When we're not sampling from these buffers
+		a renderbuffer object is generally perferred since it's more optimized
+		
+		,,,
+		Creating a depth-and-stencil-renderbuffer-object is done
+		by calling the glRenderbufferStorage()
+			glRenderbufferStorage(	gl_renderbuffer,
+									gl_depth24_stencil8, 
+									800, 600
+								);
+
+		,,,
+		Creating a renderbuffer object is similar to texture objects
+		the difference being that this object is specifically designed to be used as an image
+		instead of a general purpose data buffer like a texture
+
+		Here we've chosen the gl_depth24_stencil8 as the internal format
+		which holds both the depth and stencil buffer with 24-and-8-bits respectively
+		
+		,,,
+		Last thing left to do is actually attach the renderbuffer object
+			glFramebufferRenderbuffer(	gl_framebuffer, 
+										gl_depth_stencil_attachment, 
+										gl_renderbuffer, 
+										RBO
+									);
+
+		,,,
+
+
+
 		
 		
 
