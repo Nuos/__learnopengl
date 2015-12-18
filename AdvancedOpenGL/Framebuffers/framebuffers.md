@@ -253,6 +253,46 @@
 									);
 
 		,,,
+		Renderbuffer objects could provide some optimizations in your framebuffer projects
+		but it is important to realize
+		when to use renderbuffer objects and 
+		when to use textures
+		
+		The general rule is that
+		if you never need to sample data from a specific buffer
+		it is wise to use a renderbuffer object for that specific buffer
+		if you need to someday sample data from a specific buffer like colors or depth values
+		you should use a texture attachment instead
+		
+		Performance-wise it doesn't have an enormous impact though
+		,,,
+		
+		=== Rendering to texture
+		===
+		,,,
+		Now that we know how framebuffers (sort of) work 
+		it's time to put them to good use 
+		
+		We're going to render the scene into a color texture 
+		attached to a framebuffer object we created and 
+		then draw this texture over a simple quad that spans the whole screen
+		
+		The visual output is then exactly the same as without a framebuffer
+		but this time it's all printed on top of a single quad
+		
+		Now why is this useful? In the next section we'll see why.
+		
+		,,,
+		First thing to do is to create an actual framebuffer object and bind it
+		this is all relatively straightforward
+			
+			GLuint framebuffer;
+			glGenFramebuffers(1, &framebuffer);
+			glBindFramebuffer(gl_framebuffer, framebuffer);
+		
+		,,,
+		Next we create a texture image that we attach as a color attachment to the framebuffer
+		exblend
 
 
 
