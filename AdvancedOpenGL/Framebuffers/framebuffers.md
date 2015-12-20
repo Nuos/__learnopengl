@@ -229,6 +229,11 @@
 		a renderbuffer object is generally perferred since it's more optimized
 		
 		,,,
+		http://stackoverflow.com/questions/23119433/why-do-glbindrenderbuffer-and-glrenderbufferstorage-each-take-a-target-paramet
+		https://www.opengl.org/registry/specs/EXT/framebuffer_object.txt
+		https://www.opengl.org/wiki/Renderbuffer_Object
+		,,,
+		
 		Creating a depth-and-stencil-renderbuffer-object is done
 		by calling the glRenderbufferStorage()
 			glRenderbufferStorage(	gl_renderbuffer,
