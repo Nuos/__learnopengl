@@ -51,7 +51,7 @@ Diffuse Lighting
   ***  the-directed-light-ray    a direction vector that is the difference vector between the light's position and the fragment's position. To calculate this light ray we need the light's position vector and the fragment's-position-vector...
   
 ************************************************************************************************************************
-Materials
+Materials (12-20-2015)
 
 	#0 extensions specs
 	
@@ -62,7 +62,7 @@ Materials
 	https://www.opengl.org/wiki
 
 ************************************************************************************************************************
-Conceptions
+Conceptions  (12-20-2015)
 
 	# Renderbuffer Object
 	
