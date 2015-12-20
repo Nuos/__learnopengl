@@ -292,7 +292,72 @@
 		
 		,,,
 		Next we create a texture image that we attach as a color attachment to the framebuffer
-		exblend
+		
+		We set the texture's dimensions equal to the width and height of the window 
+		and keep its data uninitialized
+		
+			,,,
+			//Generate texture
+			GLuint texColorBuffer;
+			glGenTextures(1, &texColorBuffer);
+			glBindTexture(gl_texture_2d, texColorBuffer);
+			glTexImage2D(gl_texture_2d, 0, gl_rgb, 800, 600, 0, gl_rgb, gl_unsigned_byte, NULL);
+			glTexParameteri(gl_texture_2d, gl_texture_min_filter, gl_linear);
+			glTexParameteri(gl_texture_2d, gl_texture_mag_filter, gl_linear);
+			glBindTexture(gl_texture_2d, 0);
+			
+			// Attach it to currently bound framebuffer object
+			glFramebufferTexture2D(gl_framebuffer, gl_color_attachment0, gl_texture_2d, texColorBuffer, 0);
+			,,,
+		
+		,,,
+		We also want to make sure OpenGL is able to do depth testing 
+			(and optionally stencil testing if you're into that)
+		so we have to make sure to add a depth (and stencil) attachment to the framebuffer as well
+		Since we'll only be sampling the color buffer and not the other buffers 
+		we can create a renderbuffer-object for this purpose
+		
+		Remember that they're a good choice when you're not going to sample from the specific buffers ??
+		
+		,,,
+		Creating a renderbuffer-object isn't too hard
+		The only thing we have to remember is that 
+		we're creating it as a depth and stencil attachment renderbuffer-object
+		
+		We set its internal format to gl_depth24_stencil8 
+		which is enough precision for our purpose
+			,,,
+			GLuint RBO;
+			glGenRenderbuffers(1, &RBO);
+			glBindRenderbuffer(gl_renderbuffer, RBO);
+			glRenderbufferStorage(gl_renderbuffer, gl_depth24_stencil8, 800, 600);
+			glBindRenderbuffer(gl_renderbuffer, );
+			,,,
+			
+		,,,
+		Once we've allocated enough memory for the renderbuffer
+		
+		Then as a final step before we can complete the framebuffer 
+		we attach the renderbuffer-object to the depth and stencil attachment of the framebuffer
+			,,,
+			glFramebufferRenderbuffer(gl_framebuffer, gl_depth_stencil_attachment, gl_renderbuffer, RBO);
+			,,,
+			
+		,,,
+		Then as a final measure we want to check if the framebuffer is actually complete and if it's not
+		we print an error msg
+			,,,
+			if(glCheckFramebufferStatus(gl_framebuffer) != gl_framebuffer_complete) {
+			    cout << "Error:framebuffer:framebuffer is not complete...\n\n"
+			}
+			glBindFramebuffer(gl_framebuffer, 0);
+			,,,
+			
+		,,,
+		Then also be sure to unbind the framebuffer to make sure 
+		we're not accidentally rendering to the wrong framebuffer
+		
+		
 
 
 
