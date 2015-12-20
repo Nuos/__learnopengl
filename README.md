@@ -74,7 +74,19 @@ Conceptions  (12-20-2015)
 	
 	https://www.opengl.org/wiki/Renderbuffer_Object
 	
-
+	,,,,
+	
+	# Framebuffers
+	
+	https://www.opengl.org/wiki/Framebuffer
+	
+	https://www.opengl.org/wiki/Framebuffer_Object
+	
+	http://www.lighthouse3d.com/tutorials/opengl_framebuffer_objects/
+	
+	https://www.khronos.org/opengles/sdk/docs/man/xhtml/glFramebufferRenderbuffer.xml
+	
+	http://www.songho.ca/opengl/gl_fbo.html
 
 ************************************************************************************************************************
 
