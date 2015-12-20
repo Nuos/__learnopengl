@@ -51,6 +51,26 @@ Diffuse Lighting
   ***  the-directed-light-ray    a direction vector that is the difference vector between the light's position and the fragment's position. To calculate this light ray we need the light's position vector and the fragment's-position-vector...
   
 ************************************************************************************************************************
+Materials
+	#0 extensions specs
+	
+	https://www.opengl.org/registry/specs/EXT/framebuffer_object.txt
+	
+	#1 opengl wiki
+	
+	https://www.opengl.org/wiki
+
+************************************************************************************************************************
+Conception
+	# Renderbuffer Object
+	http://stackoverflow.com/questions/23119433/why-do-glbindrenderbuffer-and-glrenderbufferstorage-each-take-a-target-paramet
+	http://stackoverflow.com/questions/17711673/render-off-screen-with-fbo-and-renderbuffer-and-pixel-transfer-of-color-depth
+	http://stackoverflow.com/questions/9909473/opengl-es-2-0-buffer-setup
+	https://www.opengl.org/wiki/Renderbuffer_Object
+	
 
 
 ************************************************************************************************************************
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
