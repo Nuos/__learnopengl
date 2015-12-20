@@ -357,100 +357,172 @@
 		Then also be sure to unbind the framebuffer to make sure 
 		we're not accidentally rendering to the wrong framebuffer
 		
+		Now that the framebuffer is complete 
+		all we need to do 
+			to render to the framebuffer's buffers instead of the default framebuffers
+		is simply bind to the framebuffer object
 		
-
-
-
+		All subsequent rendering commands will then influence the currently bound framebuffer
+		
+		All the depth and stencil operations will also read from the currently bound framebuffer's depth 
+		and stencil attachments if they're available
+		
+		If you were to omit a depth buffer for example
+		all  depth testing operations will no longer work
+		because there's not a depth buffer present in the currently bound framebuffer
+		
+		,,,,,
+		So
+		to draw the scene to a single texture we'll have to take the following steps
+			#1 render the scene as usual with the new framebuffer bound as the active framebuffer
+			#2 bind to the default framebuffer
+			#3 draw a quad that spans the entire screen with the new framebuffer's color buffer as its texture
+		
+		,,,
+		We'll draw the same scene we've used in the depth testing tutorial
+		but this time with the old-school container texture
+		
+		,,,
+		To draw the quad we're going to create a fresh set of simple shaders
+		We're not going to include any fancy matrix transformations
+		since we'll just be supplying the vertex coordinates as normalized device coordinates
+		So we can directly specify them as the output of the vertex shader
+		
+		The vertex shader looks like
+			,,,
+			#version 330 core
+			layout (location = 0) in vec2 position;
+			layout (location = 1) in vec2 texCoords;
+			out vec2 TexCoords;
+			void main()
+			    gl_Position = vec4(position.x, position.y, 0.0f, 1.0f);
+				TexCoords = texCoords;
+			,,,
+		,,,
+		The fragment shader will be even more basic since the only thing we have to do is sample from a texture
+			,,,
+			#version 330 core
+			in vec2 TexCoords;
+			out vec4 color;
+			uniform sampler2D screenTexture;
+			void main()
+			    color = texture(screenTexture, TexCoords);
+			,,,
+		,,,
+		It is then up to you to create and configure a VAO for the screen quad
+		
+		A render iteration of the framebuffer procedure then has the following structure
+			,,,
+			//First pass
+			glBindFramebuffer();
+			glClearColor()
+			glClear()
+			glEnable(gl_depth_test);
+			
+			//Second pass
+			glBindFramebuffer();
+			glClearColor()
+			glClear()
+			
+			screenShader.Use();
+			glBindVertexArray(quadVAO);
+			glDisable(gl_depth_test);
+			glBindTexture(gl_texture_2d, textureColorbuffer);
+			glDrawArrays(gl_triangles, 0, 6);
+			glBindVertexArray(0);
+			
+		,,,
+		There are a few things to note
+		First since each framebuffer we're using has its own set of buffers
+		we want to clear each of those buffers with the appropriate bits set by calling glClear()
+		
+		Second when drawing the quad 
+		we're disabling depth testing since we don't really care about depth testing 
+		because we're drawing a simple quad
+		
+		we'll have to enable depth testing again when we draw the normal scene though
 		
 		
+		,,,
+		The left shows the visual output which is exactly the same as we've seen in the depth-testing tutorial
+		But this time rendered to a simple quad
+		
+		If we render the scene in wireframe it becomes obvious
+		we've only drawn a single quad in the default framebuffer
+		
+		
+		,,,,
+		So what was the use of this again??
+		Because we can now freely access each of the pixels of the completely rendered scene 
+		as a single texture image
+		
+		We can create some interesting effects in the fragment shader
+		The combination of all these interesting effects are called post-processing effects..
+		
+		
+	==== Post-processing
+	====
+		Now that the entire scene is rendered to a single texture we can create some interesting effects
+		simply by manipulating the texture data
+		
+		In this section we'll show you some of the more popular post-processing effects 
+		and how you might create your own with some added creativity
+		
+		===
+		=== Inversion
+		We have access to each of the colors of the render output 
+		so it's not so hard return the inverse of these colors in the fragment shader
+		
+		We're taking the color of the screen texture and inverse it by subtracting it from 1.0
+			,,,
+			void main()
+				color = vec4(vec3(1.0f - texture(screenTexture, TexCoords)), 1.0f);
+			,,,
+		
+		===
+		=== GrayScale
+		Another interesting effect is to remove all colors from the scene 
+		except the white, gray and black colors effectively grayscaling the entire image
+		
+		An easy way to do this is simply by taking all the color components and averaging their results
+			,,,
+			void main
+				color = texture(screenTexture, TexCoords);
+				float average = (color.r + color.g + color.b) / 3.0f;
+				color = vec4(average, average, average, 1.0f);
+			,,,
+		,,,
+		
+		===
+		=== Kernel effects
+		Another advantage about doing post-processing on a single texture image is that
+		we can actually sample color values from other parts of the texture
+		
+		We could for example take a small area around the current texture coordinate and
+		sample multiple texture values around the current texture value
+		
+		we can then create interesting effects by combining them in creative ways.
+		
+		,,,
+		
+		===
+		=== Blur
+		,,,
+		A kernel that creates a blur effect is defined as follows:
+		,,,
+		
+		===
+		=== Edge detection
+		,,,
+		It probably does not come as a surprise that 
+		kernel like this are used as image-manipulating tools/filters in tools like Photoshop
+		
+		Because of a graphic card's ability to process fragments with extreme parallel capabilities
+		we can manipulating images on a per-pixel basis in real-time with relative ease
+		
+		Image-editing tools therefore tend to use graphics cards more often for image-processing.
 
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+		,,,,,,,,,,,,
+	,,,,,,,,,,,,
+		
+		
