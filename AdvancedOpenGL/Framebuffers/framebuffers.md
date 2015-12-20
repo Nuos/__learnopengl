@@ -4,7 +4,7 @@
 	So far we've used several types of buffers:
 	    A color buffer for writing color values
 	    A depth buffer to write depth information
-	    A stencil buffer that allows us discard vertain fragments based on some condition..
+	    A stencil buffer that allows us discard certain fragments based on some condition..
 
 	The combination of these buffers is called a framebuffer 
 	    AND is stored somewhere in memory.
