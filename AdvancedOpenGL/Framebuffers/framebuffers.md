@@ -528,6 +528,7 @@
 		Image-editing tools therefore tend to use graphics cards more often for image-processing.
 
 		,,,,,,,,,,,,
-	,,,,,,,,,,,,
-		
-		
+		|
+		|
+		|
+		___________End__________
