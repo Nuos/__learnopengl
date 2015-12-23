@@ -77,7 +77,24 @@ Conceptions  (12-20-2015)
 	,,,,
 
 	# Framebuffers
+	
+		/ in the OpenGL rendering pipeline  The final rendering destination is called framebuffer
+		/ framebuffer is a collection of 2D arrays or storages utilized by OpenGL:0)colour buffers, 1)depth buffer, 2)stencil buffer and 3)accumulation buffer
+		/ by default OpenGL uses the framebuffer as a rendering destination that is created and managed entirely by the window system  This default framebuffer is called window-system-provided framebuffer
+		
+		//the OpenGL extension GL_ARB_framebuffer_object provides an interface to create additional non-displayable framebuffer objects (FBO)
+		//this framebuffer is called application-created framebuffer in order to distinguish from the default 
+		//by using FBO an OpenGL application can redirect the rendering output to the application-created FBO other than the traditional window-system-provided framebuffer
+		//And it is fully controlled by OpenGL...
+		
 
+		/similar to window-system-provided framebuffer /a FBO contains a collection of rendering destinations:0)color buffer,1)depth buffer, 2)stencil buffer
+		/These logical buffers in a FBO are called framebuffer-attachable images (which are 2D arrays of pixels that can be attached to a FBO)
+		
+		//there are two types of framebuffer-attachable images: 0)texture images, 1)renderbuffer images
+		//If an image of a texture object is attached to a framebuffer OpenGL performs "render to texture"
+		//If an image of a renderbuffer object is attached to a framebuffer, then OpenGL performs "offscreen rendering"
+		
 		https://www.opengl.org/wiki/Framebuffer
 
 		https://www.opengl.org/wiki/Framebuffer_Object
