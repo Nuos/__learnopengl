@@ -25,8 +25,6 @@
 	First we'll discuss how they actually work 
 		AND then we'll use them by implementing those cool post-processing effects.
 
-=======================================================================================
-
 	=== Creating a framebuffer
 	===
 		First create a framebuffer object
@@ -136,7 +134,7 @@
 		
 		to attach a depth attachment we specify the attachment type as gl_depth_attachment
 		note that the texture's format and 
-		internalformat type should then become gl_depth_component to reflect the depth buffer's storage format
+		internal-format type should then become gl_depth_component to reflect the depth buffer's storage format
 		
 		to attach a stencil buffer you use gl_stencil_attachment as the second argument and
 		specify the texture's formats as gl_stencil_index
@@ -226,7 +224,7 @@
 		but don't need to sample these values so a renderbuffer object suits this perfectly
 		
 		When we're not sampling from these buffers
-		a renderbuffer object is generally perferred since it's more optimized
+		a renderbuffer object is generally preferred since it's more optimized
 		
 		,,,
 		http://stackoverflow.com/questions/23119433/why-do-glbindrenderbuffer-and-glrenderbufferstorage-each-take-a-target-paramet
@@ -266,7 +264,7 @@
 		The general rule is that
 		if you never need to sample data from a specific buffer
 		it is wise to use a renderbuffer object for that specific buffer
-		if you need to someday sample data from a specific buffer like colors or depth values
+		if you need to someday sample data from a specific buffer like colours or depth values
 		you should use a texture attachment instead
 		
 		Performance-wise it doesn't have an enormous impact though
