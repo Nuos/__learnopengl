@@ -65,29 +65,44 @@ Materials (12-20-2015)
 Conceptions  (12-20-2015)
 
 	# Renderbuffer Object
-	
-	http://stackoverflow.com/questions/23119433/why-do-glbindrenderbuffer-and-glrenderbufferstorage-each-take-a-target-paramet
-	
-	http://stackoverflow.com/questions/17711673/render-off-screen-with-fbo-and-renderbuffer-and-pixel-transfer-of-color-depth
-	
-	http://stackoverflow.com/questions/9909473/opengl-es-2-0-buffer-setup
-	
-	https://www.opengl.org/wiki/Renderbuffer_Object
-	
+
+		http://stackoverflow.com/questions/23119433/why-do-glbindrenderbuffer-and-glrenderbufferstorage-each-take-a-target-paramet
+
+		http://stackoverflow.com/questions/17711673/render-off-screen-with-fbo-and-renderbuffer-and-pixel-transfer-of-color-depth
+
+		http://stackoverflow.com/questions/9909473/opengl-es-2-0-buffer-setup
+
+		https://www.opengl.org/wiki/Renderbuffer_Object
+
 	,,,,
-	
+
 	# Framebuffers
+
+		https://www.opengl.org/wiki/Framebuffer
+
+		https://www.opengl.org/wiki/Framebuffer_Object
+
+		http://www.lighthouse3d.com/tutorials/opengl_framebuffer_objects/
+
+		https://www.khronos.org/opengles/sdk/docs/man/xhtml/glFramebufferRenderbuffer.xml
+
+		http://www.songho.ca/opengl/gl_fbo.html
+
+	,,,
+
+	# OpenGL Frame Buffer Object
+
+		http://www.songho.ca/opengl/gl_fbo.html#renderbuffer
+
+	,,,
+
+	# OffScreen Rendering
+
+	,,,
 	
-	https://www.opengl.org/wiki/Framebuffer
+	# OpenGL Rendering Pipeline
 	
-	https://www.opengl.org/wiki/Framebuffer_Object
-	
-	http://www.lighthouse3d.com/tutorials/opengl_framebuffer_objects/
-	
-	https://www.khronos.org/opengles/sdk/docs/man/xhtml/glFramebufferRenderbuffer.xml
-	
-	http://www.songho.ca/opengl/gl_fbo.html
+	,,,
 
 ************************************************************************************************************************
 
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
