@@ -74,7 +74,6 @@ Conceptions  (12-20-2015)
 
 		https://www.opengl.org/wiki/Renderbuffer_Object
 
-	,,,,
 
 	# Framebuffers
 	
@@ -116,7 +115,6 @@ Conceptions  (12-20-2015)
 	
 	# OpenGL Rendering Pipeline
 	
-	,,,
 
 ************************************************************************************************************************
 
