@@ -105,17 +105,14 @@ Conceptions  (12-20-2015)
 
 		http://www.songho.ca/opengl/gl_fbo.html
 
-	,,,
 
 	# OpenGL Frame Buffer Object
 
 		http://www.songho.ca/opengl/gl_fbo.html#renderbuffer
 
-	,,,
 
 	# OffScreen Rendering
 
-	,,,
 	
 	# OpenGL Rendering Pipeline
 	
