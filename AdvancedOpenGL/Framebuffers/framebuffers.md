@@ -95,8 +95,65 @@
 			
 	***				***********
 		Rendering to a texture
+			==
+			We're going to render the scene into a color texture 
+			ATTACHED to a framebuffer object we created
+			
+			And then draw this texture over a simple quad that spans the whole screen 
+			
+			The visual output is then exactly the same as without a framebuffer
+			but this time it's all printed on top of a single quad
 			
 			
+			===
+			1st To create an actual framebuffer object
+			2nd To bind it
+			
+			3rd To create a texture image that we attach as a color attachment to the framebuffer
+				==
+				We set the texture's dimensions equal to the width and height of the window
+				and keep its data uninitialized
+				
+				We also want to make sure OpenGL is able to do depth(and optionally stencil testing) testing
+				so we have to make sure to add a depth(and stencil) attachment to the framebuffer as well 
+				
+				Since we'll only be sampling the color buffer
+				and not the other buffers we can create a renderbuffer object for this purpose
+					==
+					Creating a renderbuffer object as a depth and stencil attachment renderbuffer object
+					
+					Once we've allocated enough memory for the RBO we can unbind the renderbuffer
+					
+					Attaching the RBO to the depth and stencil attachment of the framebuffer
+			
+			4th Checking 
+					
+			5th	Unbinding the framebuffer
+
+			===
+			******
+			===
+				Not that the framebuffer is complete
+				all we need to do to render to the framebuffer's buffers instead of the default framebuffer's 
+				is simply bind to the framebuffer object
+				
+				All subsequent rendering commands will then influence the currently bound framebuffer
+				
+				All the depth and stencil operations will also 
+				read from the currently bound framebuffer's depth and stencil attachments if they're available
+
+			===
+			******
+			===
+				So to draw the scene to a single texture we'll have to take the following steps
+				#1st Render the scene as usual with the new framebuffer bound as the active framebuffer
+				#2nd Bind to the default framebuffer
+				#3rd Draw a quad that spans the entire screen with the new framebuffer's color buffer as its texture
+					
+				===
+				shaders for quad
+				create and configure a VAO for the screen quad
+				
 	***				***********
 	***				***********
 	***				***********
