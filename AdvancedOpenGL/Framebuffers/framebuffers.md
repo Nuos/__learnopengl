@@ -1,5 +1,28 @@
 	Framebuffers
-
+	
+	***
+		Creating a framebuffer
+			==
+			First we create a framebuffer object
+			Second we bind it as the active framebuffer
+				|all the next READ-and-WRITE framebuffer operations will affect the currently bound framebuffer
+			Third we do some operations
+			Finally we unbind the framebuffer
+		
+			==
+			For a framebuffer to be complete the following requirements have to be satisfied
+				| we have to attach at least one buffer (color, depth or stencil buffer)
+				| there should be at least one color attachment
+				| all attachments should be complete as well (reserved memory)
+				| each buffer should have the same number of samples
+				
+				 
+				
+				
+			
+			
+			
+	
 	,,,
 	So far we've used several types of buffers:
 	    A color buffer for writing color values
