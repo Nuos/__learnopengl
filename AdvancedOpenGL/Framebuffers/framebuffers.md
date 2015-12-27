@@ -1,13 +1,13 @@
 	Framebuffers
 	
-	***
+	***				***********
 		Creating a framebuffer
 			==
-			First we create a framebuffer object
-			Second we bind it as the active framebuffer
-				|all the next READ-and-WRITE framebuffer operations will affect the currently bound framebuffer
-			Third we do some operations
-			Finally we unbind the framebuffer
+			1st we create a framebuffer object
+			2nd we bind it as the active framebuffer
+			3rd we do some operations
+			4th we unbind the framebuffer
+			5th we delete the framebuffer object
 		
 			==
 			For a framebuffer to be complete the following requirements have to be satisfied
@@ -16,10 +16,49 @@
 				| all attachments should be complete as well (reserved memory)
 				| each buffer should have the same number of samples
 				
-				 
+				==
+				After creating-and-attaching some kind of attachment for/to the framebfufer
+				it is a complete framebuffer(self-defined)
 				
+				AND ALL SUBSEQUENT RENDERING OPERATIONS WILL NOW RENDER TO THE CURRENTLY BOUND FRAMEBUFFER
 				
+				Since our framebuffer is not the default framebuffer
+				the rendering commands will have no impact on the visual output of your window
+				
+				For this reason it is called off-screen rendering 
+				while rendering to a different framebuffer
+				
+				To make sure all rendering operations will have a visual impact on the main window
+				we need to make the default framebuffer active again by binding to ZERO-0 
+
+	***				***********
+		Texture attachments
+			==
+			When attaching a texture to a framebuffer
+			all rendering commands will write to the texture 
+			as if it was a normal color, depth or stencil buffer
 			
+			The advantage of using textures is that 
+			the result of all rendering operations will be stored as a texture image that
+			we can then easily use in our shaders
+			
+			==
+			creating a texture for a framebuffer
+				==
+				For this texture
+				we're only allocating memory and not actually filling it
+				
+				Filling the texture will happen as soon as we render to the framebuffer
+			
+			==
+			attaching this texture to the framebuffer
+				==
+				Aside from the color attchments we can also attach a depth and a stencil texture to the framebuffer object
+				
+				It is also possible to attach both a depth buffer and a stencil buffer as a single texture
+				
+
+		
 			
 			
 	
