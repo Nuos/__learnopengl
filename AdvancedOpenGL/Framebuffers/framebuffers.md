@@ -56,12 +56,51 @@
 				Aside from the color attchments we can also attach a depth and a stencil texture to the framebuffer object
 				
 				It is also possible to attach both a depth buffer and a stencil buffer as a single texture
-				
 
-		
+	***				***********
+		Renderbuffer object attachments
+			==
+			Renderbuffer objects were introduced to OpenGL after textures as a possible type of framebuffer attachments
+			so textures were the only attachments used in the good old days
+			
+			Just like a texture image 
+			a renderbuffer object is an actual buffer
+			E.G. an array of bytes, integers, pixels or whatever
+			
+			A renderbuffer object has the added advantage
+			though that it stores its data in OpenGL's native rendering format 
+			making it optimized for off-screen rendering to a framebuffer
+
+				==
+				Renderbuffer objects store all the render data directly into their buffer
+				without any conversations to texture-specific formats
+				thus making them faster as a writeable storage medium
+				
+				Because their data is already in its native format
+				they are quite fast when writing data or simply copying their data to other buffers
+				
+				Operations like switching buffers are quite fast when using renderbuffer objects
+			
+			==
+			creating a renderbuffer object
+			
+			== 
+			binding this renderbuffer object
+			
+			==
+			creating a depth and stencil renderbuffer object
+			
+			==
+			attaching the renderbuffer object
+			
+	***				***********
+		Rendering to a texture
 			
 			
-	
+	***				***********
+	***				***********
+	***				***********
+	***				***********
 	,,,
 	So far we've used several types of buffers:
 	    A color buffer for writing color values
