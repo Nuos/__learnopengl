@@ -1,0 +1,3 @@
+	This is the second tag file
+
+	Also, it's only a tag file.
