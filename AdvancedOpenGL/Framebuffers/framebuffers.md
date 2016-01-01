@@ -18,6 +18,19 @@
 				void main() {
 					color = vec4(vec3(1.0f - texture(screenTexture, TexCoords)), 1.0f);
 				}
+			// by this, the entire scene now has all its colors inverted
+	
+	*** Grayscale
+		Another interesting effect is to remove all colors from the scene except 
+		the white, gray and black colors effectively grayscaling the entire image
+		
+		An easy way to do this is simply by taking all the color components and
+		averaging their results
+			void main() {
+				color = texture(screenTexture, TexCoords);
+				float average = (color.r + color.g + color.b) / 3.0f;
+				color = vec4(average, average, average, 1.0f);
+			}
 			
 	
 	|
