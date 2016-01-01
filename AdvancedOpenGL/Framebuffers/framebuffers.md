@@ -60,7 +60,16 @@
 		simply returning the combined sampled colors would result in an extremely bright color
 		so we have to divide each value of the kernel by 16..
 		
+	*** Edge detection
+		Below you can an edge-detection kernel that is similar to the sharpen kernel
 		
+				--         --
+				|  1  2  1  |
+				|  2 -8  2  |
+				|  1  2  1  |
+				--         --
+		This kernel hightlights all edges and darkens the rest
+		which is quite useful when we only care about edges in an image
 	|
 	|
 	|
