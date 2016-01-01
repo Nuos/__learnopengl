@@ -47,7 +47,20 @@
 		We do have slightly adapt the fragment shader a bit to actually support kernels
 		We make the assumption that each kernel we'll be using is a 3*3 kernel
 		
-	
+	*** Blur
+		A kernel that creates a blur effect is defined as follows:
+				
+				--         --
+				|  1  2  1  |
+				|  2  4  2  |  / 16
+				|  1  2  1  |
+				--         --
+		
+		Because all values add up to 16
+		simply returning the combined sampled colors would result in an extremely bright color
+		so we have to divide each value of the kernel by 16..
+		
+		
 	|
 	|
 	|
