@@ -123,7 +123,11 @@ Conceptions  (12-20-2015)
 
 		http://www.songho.ca/dsp/convolution/convolution2d_example.html
 
-
+	# Skyboxes
+		
+		A Skybox is a cube that encompasses the entire scene and contains 6 images of a surrounding environment
+		
+		http://www.custommapmakers.org/skyboxes.php (resources online)
 
 
 ************************************************************************************************************************
