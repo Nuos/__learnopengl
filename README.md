@@ -115,6 +115,16 @@ Conceptions  (12-20-2015)
 	
 	# OpenGL Rendering Pipeline
 	
+	# Kernel image processing
+
+		https://en.wikipedia.org/wiki/Kernel_(image_processing)#Convolution
+
+		https://docs.gimp.org/en/plug-in-convmatrix.html (principle and example)
+
+		http://www.songho.ca/dsp/convolution/convolution2d_example.html
+
+
+
 
 ************************************************************************************************************************
 
