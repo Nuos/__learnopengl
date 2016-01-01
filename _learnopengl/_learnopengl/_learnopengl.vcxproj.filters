@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{3ca84bbb-952e-4ba0-893f-6912ceec43c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShaderSource">
+      <UniqueIdentifier>{6436a68d-eb82-485a-9187-549d9568766e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\_0start">
+      <UniqueIdentifier>{c66c2c5a-5dbe-497e-8692-5d170f0ec801}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShaderSource\0start">
+      <UniqueIdentifier>{d99cefa1-c725-46e6-9610-9933f2fde852}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShaderSource\1light">
+      <UniqueIdentifier>{6fe4b309-53c8-4f9d-926e-0176760aac14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShaderSource\3model">
+      <UniqueIdentifier>{3ef2cb33-83e5-4bc4-b768-00ef299adaad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\_1light">
+      <UniqueIdentifier>{0588922c-57c0-41a5-abef-2f9f6844d34f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\_2model">
+      <UniqueIdentifier>{229ee36a-ecf0-404c-a123-410552c95703}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\_0start\0HelloTriangle">
+      <UniqueIdentifier>{bb53f339-329d-4cf2-8bdc-960a86859c92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{02f2077b-e3ea-4b1c-a191-e822ae8d742d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\_0start\1Textures">
+      <UniqueIdentifier>{906b2435-4c4d-452a-9566-d86173df7d5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\_0start\2Transform">
+      <UniqueIdentifier>{0dafa55e-048b-4084-b2c9-83fe2208bba2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\_0start\3Coord">
+      <UniqueIdentifier>{3fa1b497-fedb-4708-9e9b-6c9e7a8586d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{b2ff05a0-24c4-4c07-ba79-72a51890fd72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mesh">
+      <UniqueIdentifier>{56209c8f-38c0-4a76-a59e-487cac4c9d3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{ed8ff138-5e3d-4f08-820b-8d969bf94623}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\_3advanced">
+      <UniqueIdentifier>{0e9b308e-825f-48d3-ba49-85109dfe7e25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\4_advancedlight">
+      <UniqueIdentifier>{f0bd9829-33c0-4fc2-a037-0caef195d27c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShaderSource\4advanced">
+      <UniqueIdentifier>{50fbd9ff-59fe-47c5-9905-a2a3bbd6115d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\main.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\start\hellotriangle\HelloTriangle.h">
+      <Filter>Classes\_0start\0HelloTriangle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\start\textures\Texture.h">
+      <Filter>Classes\_0start\1Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\start\transform\Transform.h">
+      <Filter>Classes\_0start\2Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\start\coord\Coord.h">
+      <Filter>Classes\_0start\3Coord</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\light\Color.h">
+      <Filter>Classes\_1light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\__Mesh\Mesh.h">
+      <Filter>Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\__Camera\Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\__Shader\Shader.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\__Model\Model.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\model\modelld.h">
+      <Filter>Classes\_2model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\advanced\DepthTest.h">
+      <Filter>Classes\_3advanced</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\advanced\BlendTest.h">
+      <Filter>Classes\_3advanced</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\advanced\DiscardFrag.h">
+      <Filter>Classes\_3advanced</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\advanced\FrameBuffer.h">
+      <Filter>Classes\4_advancedlight</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\main.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\start\hellotriangle\HelloTriangle.cpp">
+      <Filter>Classes\_0start\0HelloTriangle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\start\textures\Texture.cpp">
+      <Filter>Classes\_0start\1Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\start\transform\Transform.cpp">
+      <Filter>Classes\_0start\2Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\start\coord\Coord.cpp">
+      <Filter>Classes\_0start\3Coord</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\light\Color.cpp">
+      <Filter>Classes\_1light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\__Mesh\Mesh.cpp">
+      <Filter>Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\__Model\Model.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\model\modelld.cpp">
+      <Filter>Classes\_2model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\advanced\DepthTest.cpp">
+      <Filter>Classes\_3advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\advanced\StencilTest.cpp">
+      <Filter>Classes\_3advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\advanced\BlendTest.cpp">
+      <Filter>Classes\_3advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\advanced\DiscardFrag.cpp">
+      <Filter>Classes\_3advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\advanced\FrameBuffer.cpp">
+      <Filter>Classes\4_advancedlight</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\_ShaderSource\start\default.vs">
+      <Filter>ShaderSource\0start</Filter>
+    </None>
+    <None Include="..\_ShaderSource\start\default.fsh">
+      <Filter>ShaderSource\0start</Filter>
+    </None>
+    <None Include="..\_ShaderSource\start\textures.vs">
+      <Filter>ShaderSource\0start</Filter>
+    </None>
+    <None Include="..\_ShaderSource\start\textures.fsh">
+      <Filter>ShaderSource\0start</Filter>
+    </None>
+    <None Include="..\_ShaderSource\start\transform.vs">
+      <Filter>ShaderSource\0start</Filter>
+    </None>
+    <None Include="..\_ShaderSource\start\transform.fsh">
+      <Filter>ShaderSource\0start</Filter>
+    </None>
+    <None Include="..\_ShaderSource\start\shader.vs">
+      <Filter>ShaderSource\0start</Filter>
+    </None>
+    <None Include="..\_ShaderSource\start\shader.fsh">
+      <Filter>ShaderSource\0start</Filter>
+    </None>
+    <None Include="..\_ShaderSource\light\lighting.vs">
+      <Filter>ShaderSource\1light</Filter>
+    </None>
+    <None Include="..\_ShaderSource\light\lighting.frag">
+      <Filter>ShaderSource\1light</Filter>
+    </None>
+    <None Include="..\_ShaderSource\light\lamp.vs">
+      <Filter>ShaderSource\1light</Filter>
+    </None>
+    <None Include="..\_ShaderSource\light\lamp.frag">
+      <Filter>ShaderSource\1light</Filter>
+    </None>
+    <None Include="..\_ShaderSource\model\modelloading.vs">
+      <Filter>ShaderSource\3model</Filter>
+    </None>
+    <None Include="..\_ShaderSource\model\modelloading.frag">
+      <Filter>ShaderSource\3model</Filter>
+    </None>
+    <None Include="..\_ShaderSource\advanced\advanced.vs">
+      <Filter>ShaderSource\4advanced</Filter>
+    </None>
+    <None Include="..\_ShaderSource\advanced\advanced.frag">
+      <Filter>ShaderSource\4advanced</Filter>
+    </None>
+    <None Include="..\_ShaderSource\advanced\singleColor.frag">
+      <Filter>ShaderSource\4advanced</Filter>
+    </None>
+    <None Include="..\Classes\advanced\StencilTest.h">
+      <Filter>Classes\_3advanced</Filter>
+    </None>
+    <None Include="..\_ShaderSource\advanced\shader.vs">
+      <Filter>ShaderSource\4advanced</Filter>
+    </None>
+    <None Include="..\_ShaderSource\advanced\shader.frag">
+      <Filter>ShaderSource\4advanced</Filter>
+    </None>
+    <None Include="..\_ShaderSource\advanced\screen.vs">
+      <Filter>ShaderSource\4advanced</Filter>
+    </None>
+    <None Include="..\_ShaderSource\advanced\screen.frag">
+      <Filter>ShaderSource\4advanced</Filter>
+    </None>
+  </ItemGroup>
+</Project>

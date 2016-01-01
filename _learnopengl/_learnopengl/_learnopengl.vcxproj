@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F31468B0-913B-4B39-8593-38B516A47B55}</ProjectGuid>
+    <RootNamespace>_learnopengl</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\output\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Classes;..\Classes\light;..\Classes\model;..\Classes\start;..\Classes\start\hellotriangle;..\Classes\start\textures;..\Classes\start\transform;..\Classes\start\coord;..\Classes\advanced;..\Classes\advancedlight;..\_ShaderSource;..\__Camera;..\__Shader;..\__Mesh;..\__Model;..\libs\glew-1.13.0\include\GLEW;..\libs\glfw-3.1.1\include\GLFW;..\libs\glm-0.9.7.1\glm;..\libs\soillib\src;..\libs\assimp-3.1.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\libs\glfw-3.1.1\build\src\Debug;..\libs\glew-1.13.0\lib\Release\Win32;..\libs\soillib\lib;..\libs\assimp-3.1.1\build\code\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;SOIL.lib;assimpd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\advanced\BlendTest.h" />
+    <ClInclude Include="..\Classes\advanced\DepthTest.h" />
+    <ClInclude Include="..\Classes\advanced\DiscardFrag.h" />
+    <ClInclude Include="..\Classes\advanced\FrameBuffer.h" />
+    <ClInclude Include="..\Classes\light\Color.h" />
+    <ClInclude Include="..\Classes\main.h" />
+    <ClInclude Include="..\Classes\model\modelld.h" />
+    <ClInclude Include="..\Classes\start\coord\Coord.h" />
+    <ClInclude Include="..\Classes\start\hellotriangle\HelloTriangle.h" />
+    <ClInclude Include="..\Classes\start\textures\Texture.h" />
+    <ClInclude Include="..\Classes\start\transform\Transform.h" />
+    <ClInclude Include="..\__Camera\Camera.h" />
+    <ClInclude Include="..\__Mesh\Mesh.h" />
+    <ClInclude Include="..\__Model\Model.h" />
+    <ClInclude Include="..\__Shader\Shader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\advanced\BlendTest.cpp" />
+    <ClCompile Include="..\Classes\advanced\DepthTest.cpp" />
+    <ClCompile Include="..\Classes\advanced\DiscardFrag.cpp" />
+    <ClCompile Include="..\Classes\advanced\FrameBuffer.cpp" />
+    <ClCompile Include="..\Classes\advanced\StencilTest.cpp" />
+    <ClCompile Include="..\Classes\light\Color.cpp" />
+    <ClCompile Include="..\Classes\main.cpp" />
+    <ClCompile Include="..\Classes\model\modelld.cpp" />
+    <ClCompile Include="..\Classes\start\coord\Coord.cpp" />
+    <ClCompile Include="..\Classes\start\hellotriangle\HelloTriangle.cpp" />
+    <ClCompile Include="..\Classes\start\textures\Texture.cpp" />
+    <ClCompile Include="..\Classes\start\transform\Transform.cpp" />
+    <ClCompile Include="..\__Mesh\Mesh.cpp" />
+    <ClCompile Include="..\__Model\Model.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Classes\advanced\StencilTest.h" />
+    <None Include="..\_ShaderSource\advanced\advanced.frag" />
+    <None Include="..\_ShaderSource\advanced\advanced.vs" />
+    <None Include="..\_ShaderSource\advanced\screen.frag" />
+    <None Include="..\_ShaderSource\advanced\screen.vs" />
+    <None Include="..\_ShaderSource\advanced\shader.frag" />
+    <None Include="..\_ShaderSource\advanced\shader.vs" />
+    <None Include="..\_ShaderSource\advanced\singleColor.frag" />
+    <None Include="..\_ShaderSource\light\lamp.frag" />
+    <None Include="..\_ShaderSource\light\lamp.vs" />
+    <None Include="..\_ShaderSource\light\lighting.frag" />
+    <None Include="..\_ShaderSource\light\lighting.vs" />
+    <None Include="..\_ShaderSource\model\modelloading.frag" />
+    <None Include="..\_ShaderSource\model\modelloading.vs" />
+    <None Include="..\_ShaderSource\start\default.fsh" />
+    <None Include="..\_ShaderSource\start\default.vs" />
+    <None Include="..\_ShaderSource\start\shader.fsh" />
+    <None Include="..\_ShaderSource\start\shader.vs" />
+    <None Include="..\_ShaderSource\start\textures.fsh" />
+    <None Include="..\_ShaderSource\start\textures.vs" />
+    <None Include="..\_ShaderSource\start\transform.fsh" />
+    <None Include="..\_ShaderSource\start\transform.vs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
