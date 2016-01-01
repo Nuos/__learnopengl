@@ -1,5 +1,30 @@
 	Framebuffers
 	
+	
+	
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	Post-processing
+		Now that the entire scene is rendered to a single texture 
+		we can create some interesting effects simply by manipulating the texture data
+	
+	*** Inversion
+		We have access to each of the colors of the render output
+		so it's not so hard to return the inverse of these colors in the fragment shader
+		
+		We are taking the color of the screen texture and 
+		inverse it by subtracting it from 1.0f
+			screenTexture.frag
+				void main() {
+					color = vec4(vec3(1.0f - texture(screenTexture, TexCoords)), 1.0f);
+				}
+			
+	
+	|
+	|
+	|
+	|
+	|
 	***				***********
 		Creating a framebuffer
 			==
@@ -170,7 +195,8 @@
 	    AND thus define our own color and optionally a depth and stencil buffer.
 
 	
-	,,,
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	The rendering operations we've done so far 
 		WERE all done on top of the render buffers attached to the default framebuffer.
 	The default framebuffer is created
