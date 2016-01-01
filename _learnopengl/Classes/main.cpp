@@ -1,15 +1,10 @@
 #include <main.h>
 
 int testPart();
-int demoTestFunc();
 
 int main()
 {
     testPart();
-    return 0;
-}
-
-int demoTestFunc() {
     return 0;
 }
 
@@ -28,7 +23,8 @@ int testPart()
     //StencilTest::enter();
     //DiscardFrag::enter();
     //BlendTest::enter();
-    FrameBuffer::enter();
+    //FrameBuffer::enter();
+    Cubemaps::enter();
 
     return 0;
 }

@@ -70,6 +70,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\advanced\BlendTest.h" />
+    <ClInclude Include="..\Classes\advanced\Cubemaps.h" />
     <ClInclude Include="..\Classes\advanced\DepthTest.h" />
     <ClInclude Include="..\Classes\advanced\DiscardFrag.h" />
     <ClInclude Include="..\Classes\advanced\FrameBuffer.h" />
@@ -87,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\advanced\BlendTest.cpp" />
+    <ClCompile Include="..\Classes\advanced\Cubemaps.cpp" />
     <ClCompile Include="..\Classes\advanced\DepthTest.cpp" />
     <ClCompile Include="..\Classes\advanced\DiscardFrag.cpp" />
     <ClCompile Include="..\Classes\advanced\FrameBuffer.cpp" />
@@ -105,11 +107,15 @@
     <None Include="..\Classes\advanced\StencilTest.h" />
     <None Include="..\_ShaderSource\advanced\advanced.frag" />
     <None Include="..\_ShaderSource\advanced\advanced.vs" />
+    <None Include="..\_ShaderSource\advanced\cmadvanced.frag" />
+    <None Include="..\_ShaderSource\advanced\cmadvanced.vs" />
     <None Include="..\_ShaderSource\advanced\screen.frag" />
     <None Include="..\_ShaderSource\advanced\screen.vs" />
     <None Include="..\_ShaderSource\advanced\shader.frag" />
     <None Include="..\_ShaderSource\advanced\shader.vs" />
     <None Include="..\_ShaderSource\advanced\singleColor.frag" />
+    <None Include="..\_ShaderSource\advanced\skybox.frag" />
+    <None Include="..\_ShaderSource\advanced\skybox.vs" />
     <None Include="..\_ShaderSource\light\lamp.frag" />
     <None Include="..\_ShaderSource\light\lamp.vs" />
     <None Include="..\_ShaderSource\light\lighting.frag" />

@@ -103,7 +103,10 @@
       <Filter>Classes\_3advanced</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\advanced\FrameBuffer.h">
-      <Filter>Classes\4_advancedlight</Filter>
+      <Filter>Classes\_3advanced</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\advanced\Cubemaps.h">
+      <Filter>Classes\_3advanced</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -147,7 +150,10 @@
       <Filter>Classes\_3advanced</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\advanced\FrameBuffer.cpp">
-      <Filter>Classes\4_advancedlight</Filter>
+      <Filter>Classes\_3advanced</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\advanced\Cubemaps.cpp">
+      <Filter>Classes\_3advanced</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +221,18 @@
       <Filter>ShaderSource\4advanced</Filter>
     </None>
     <None Include="..\_ShaderSource\advanced\screen.frag">
+      <Filter>ShaderSource\4advanced</Filter>
+    </None>
+    <None Include="..\_ShaderSource\advanced\cmadvanced.vs">
+      <Filter>ShaderSource\4advanced</Filter>
+    </None>
+    <None Include="..\_ShaderSource\advanced\cmadvanced.frag">
+      <Filter>ShaderSource\4advanced</Filter>
+    </None>
+    <None Include="..\_ShaderSource\advanced\skybox.vs">
+      <Filter>ShaderSource\4advanced</Filter>
+    </None>
+    <None Include="..\_ShaderSource\advanced\skybox.frag">
       <Filter>ShaderSource\4advanced</Filter>
     </None>
   </ItemGroup>

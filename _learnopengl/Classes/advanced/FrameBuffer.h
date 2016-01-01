@@ -1,6 +1,6 @@
 //http://www.learnopengl.com/#!Advanced-OpenGL/Framebuffers
 #pragma once
-#define _FrameBuffer_H_
+//#define _FrameBuffer_H_
 #ifdef _FrameBuffer_H_
 #include <glew.h>
 #include <glfw3.h>

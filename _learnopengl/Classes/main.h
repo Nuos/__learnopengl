@@ -18,3 +18,4 @@
 #include <DiscardFrag.h>
 #include <BlendTest.h>
 #include <FrameBuffer.h>
+#include <Cubemaps.h>
