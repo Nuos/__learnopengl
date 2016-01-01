@@ -1,35 +1,5 @@
-﻿生成启动时间为 2016/1/1 23:41:20。
-     1>项目“D:\github\nuos_learnopengl\_learnopengl\_learnopengl\_learnopengl.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\Classes /I..\Classes\light /I..\Classes\model /I..\Classes\start /I..\Classes\start\hellotriangle /I..\Classes\start\textures /I..\Classes\start\transform /I..\Classes\start\coord /I..\Classes\advanced /I..\Classes\advancedlight /I..\_ShaderSource /I..\__Camera /I..\__Shader /I..\__Mesh /I..\__Model /I"..\libs\glew-1.13.0\include\GLEW" /I"..\libs\glfw-3.1.1\include\GLFW" /I"..\libs\glm-0.9.7.1\glm" /I..\libs\soillib\src /I"..\libs\assimp-3.1.1\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Classes\advanced\Cubemaps.cpp
-         Cubemaps.cpp
-     1>d:\github\nuos_learnopengl\_learnopengl\classes\advanced\cubemaps.cpp(186): warning C4244: “初始化”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\github\nuos_learnopengl\_learnopengl\classes\advanced\cubemaps.cpp(341): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\github\nuos_learnopengl\_learnopengl\classes\advanced\cubemaps.cpp(348): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\github\nuos_learnopengl\_learnopengl\classes\advanced\cubemaps.cpp(349): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\github\nuos_learnopengl\_learnopengl\classes\advanced\cubemaps.cpp(353): warning C4244: “初始化”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\github\nuos_learnopengl\_learnopengl\classes\advanced\cubemaps.cpp(354): warning C4244: “初始化”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\github\nuos_learnopengl\_learnopengl\classes\advanced\cubemaps.cpp(356): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\github\nuos_learnopengl\_learnopengl\classes\advanced\cubemaps.cpp(357): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\output\_learnopengl.exe" /INCREMENTAL /NOLOGO /LIBPATH:"..\libs\glfw-3.1.1\build\src\Debug" /LIBPATH:"..\libs\glew-1.13.0\lib\Release\Win32" /LIBPATH:..\libs\soillib\lib /LIBPATH:"..\libs\assimp-3.1.1\build\code\Debug" opengl32.lib glew32.lib glfw3.lib SOIL.lib assimpd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\output\_learnopengl.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\output\_learnopengl.lib" /MACHINE:X86 Debug\BlendTest.obj
-         Debug\Cubemaps.obj
-         Debug\DepthTest.obj
-         Debug\DiscardFrag.obj
-         Debug\FrameBuffer.obj
-         Debug\StencilTest.obj
-         Debug\Color.obj
-         Debug\main.obj
-         Debug\modelld.obj
-         Debug\Coord.obj
-         Debug\HelloTriangle.obj
-         Debug\Texture.obj
-         Debug\Transform.obj
-         Debug\Mesh.obj
-         Debug\Model.obj
-         _learnopengl.vcxproj -> D:\github\nuos_learnopengl\_learnopengl\_learnopengl\..\output\_learnopengl.exe
-     1>已完成生成项目“D:\github\nuos_learnopengl\_learnopengl\_learnopengl\_learnopengl.vcxproj”(Build 个目标)的操作。
+﻿生成启动时间为 2016/1/1 23:52:42。
 
 生成成功。
 
-已用时间 00:00:00.86
+已用时间 00:00:00.01
