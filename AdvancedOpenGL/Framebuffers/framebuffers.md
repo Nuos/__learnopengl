@@ -32,6 +32,21 @@
 				color = vec4(average, average, average, 1.0f);
 			}
 			
+	*** Kernel effects
+		Tips:
+			Most kernels you'll find over the internet all sum up to 1
+			if you add all the weights together
+			
+			If they don't add up to 1
+			it means that the resulting texture color ends brighter or darker than original texture value
+			
+		Kernels are an extremely useful tool for post-processing
+		since they're quite easy to use, experiment with and 
+		a lot examples can be found online
+		
+		We do have slightly adapt the fragment shader a bit to actually support kernels
+		We make the assumption that each kernel we'll be using is a 3*3 kernel
+		
 	
 	|
 	|
