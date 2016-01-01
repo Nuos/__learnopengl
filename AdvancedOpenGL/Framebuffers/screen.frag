@@ -5,5 +5,6 @@ uniform sampler2D screenTexture;
 
 void main()
 {
-   color = texture(screenTexture, TexCoords);
+   //color = texture(screenTexture, TexCoords);
+   color = vec4(vec3(1.0f - texture(screenTexture, TexCoords)), 1.0f);// post-rendering  -inversion effects
 }
