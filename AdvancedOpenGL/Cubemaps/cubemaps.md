@@ -103,6 +103,26 @@
 	/****			****/
 	
 	*** skybox
+		#0 Loading a skybox  // GLuint loadCubemap(std::vector<const GLchar*> faces);
+		#1 Displaying a skybox // cubeVAO- cubeVBO- cubeVertices[]-  new-set-of-shaders
+				
+				// vertex-shader
+				#version 330 core
+				layout (location = 0) in vec3 position;
+				out vec3 TexCoords;
+				uniform mat4 projection;
+				uniform mat4 view;
+				void main()
+					gl_Position = projection * view * vec4(position, 1.0f);
+					TexCoords = position;
+				
+				//fragment-shader
+				#version 330 core
+				in vec3 TexCoords;
+				out vec4 color;
+				uiform samplerCube skybox;
+				void main() 
+					color = texture(skybox, TexCoords);
 		
 		
 
@@ -112,4 +132,48 @@
 
 
 
-			
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
