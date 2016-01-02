@@ -2,8 +2,10 @@
 
 	*** glTexImage2D()
 	
+			The Func glTexImage2D() generates the texture-image on the current-bound texture-object
+	
 		The function glTexImage2D() generates the texture image on the current bound texture object
-		    at the active texture unit
+		    at the active texture unit 
 		The function expects destination and source data from 
 			where the source image is expected to be an array of data (usually a byte array)
 			
