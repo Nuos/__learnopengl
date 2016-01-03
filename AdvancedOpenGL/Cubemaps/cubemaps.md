@@ -190,7 +190,8 @@
 			The skybox will as a result only be rendered wherever there are no objects visible
 			(only then it will pass the depth test everything else is in front of the skybox)
 										
-		
+	**** Environment mapping
+	
 
 
 
