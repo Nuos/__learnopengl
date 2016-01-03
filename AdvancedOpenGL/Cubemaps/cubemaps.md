@@ -124,6 +124,31 @@
 				void main() 
 					color = texture(skybox, TexCoords);
 		
+		Rendering the skybox is easy now that we have a cubemap texture
+		we simply bind the cubemap texture and 
+		the skybox sampler is automatically filled with the skybox cubemap
+		
+		To draw the skybox we're going to draw it as the first object in the scene and disable depth writing
+		This way the skybox will always be drawn at the background of all the other objects
+		
+			//
+			glDepthMask(gl_false);
+			skyboxShader.Use();
+			// :.: set view and projection matrix
+			glBindVertexArray(skyboxVAO);// vertices
+			glBindTexture(gl_texture_cube_map, cubemapTexture);// texture
+			glDrawArrays(gl_triangles, 0, 36);// primitive
+			glBindVertexArray(0);
+			glDepthMask(gl_true);
+			// :.: draw rest of the scene
+			
+		The curent view matrix however transforms all the skybox's positions 
+		by rotating, scaling and translating them
+		so if the player moves the cubemap moves as well
+		
+		We want to remove the translation part of the view matrix 
+		so movement doesn't affect the skybox's position vectors
+		
 		
 
 
