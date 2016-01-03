@@ -150,6 +150,15 @@
 		so movement doesn't affect the skybox's position vectors
 		
 		
+		We could remove the translation section of transformation matrices
+		by taking the upper-left-(3X3) matrix of the (4X4) matrix
+		effectively removing the tanslation components
+		We can achieve this by simply converting 
+							the view matrix to a (3X3) matrix (removing translation) and
+							converting it back to a (4X4) matrix
+							glm::mat4 view = glm::mat4(glm::mat3(camera.GetViewMatrix()));
+										
+		
 
 
 
