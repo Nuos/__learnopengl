@@ -191,7 +191,14 @@
 			(only then it will pass the depth test everything else is in front of the skybox)
 										
 	**** Environment mapping
-	
+		We now have the entire surrounding environment mapped in a single texture object and
+		we could use that information for more than just a skybox
+		
+		Using a cubemap with an environment
+		we could give objects reflective or refractive properties
+		
+		Techniques that use an environment cubemap like this are called environment mapping techniques
+		and the two most popular ones are reflection and refraction
 
 
 
