@@ -157,6 +157,38 @@
 							the view matrix to a (3X3) matrix (removing translation) and
 							converting it back to a (4X4) matrix
 							glm::mat4 view = glm::mat4(glm::mat3(camera.GetViewMatrix()));
+							
+							This remvoes any translation
+							but keeps all rotation transformations 
+							so the user can still look around the scene
+							
+	**** An Optimization
+		...
+		If we render the skybox first we're running the fragment shader for each pixel on the screen
+		even though only a small part of the skybox will eventually be visible
+		Fragments that could have easily been discarded using early depth testing saving us valuable bandwidth
+		
+		SO to give us a slight performance boost 
+		we're going to render the skybox's fragments
+		wherever the early depth test passes greatly reducing the calls to the fragment shader
+		
+		....
+		Perspective-division is performed after the vertex shader has run
+		dividing the gl_Position's xyz-coordinates by its w-component
+		
+		...the z-component of the resulting division is applied its z-component translates to w/w = 1.0f
+		
+			// skybox.vs
+			void main() 
+				vec4 pos = projection * view * vec4(position, 1.0f);
+				gl_Position = pox.xyww;
+				TexCoords = position;
+			
+			The resulting normalized device coordinates will then 
+			always have a z-value equal to 1.0f: the maximum depth value
+			
+			The skybox will as a result only be rendered wherever there are no objects visible
+			(only then it will pass the depth test everything else is in front of the skybox)
 										
 		
 
