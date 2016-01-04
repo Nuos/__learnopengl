@@ -10,7 +10,7 @@ http://bullteacher.com/category/zh_learnopengl_com
 http://www.learnopengl.com/
 
 ************************************************************************************************************************
-[libs]
+#[libs]
 #3 glew-1.13.0
 
 #2 glfw-3.1.1
