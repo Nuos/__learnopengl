@@ -55,11 +55,11 @@ Materials (12-20-2015)
 
 	#0 extensions specs
 	
-	https://www.opengl.org/registry/specs/EXT/framebuffer_object.txt
+		https://www.opengl.org/registry/specs/EXT/framebuffer_object.txt
 	
 	#1 opengl wiki
 	
-	https://www.opengl.org/wiki
+		https://www.opengl.org/wiki
 
 ************************************************************************************************************************
 Conceptions  (12-20-2015)
