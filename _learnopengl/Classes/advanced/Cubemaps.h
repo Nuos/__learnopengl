@@ -1,5 +1,5 @@
 #pragma once
-#define _CubeMaps_H_
+//#define _CubeMaps_H_
 #ifdef _CubeMaps_H_
 
 #include <glew.h>
