@@ -200,31 +200,6 @@
 		Techniques that use an environment cubemap like this are called environment mapping techniques
 		and the two most popular ones are reflection and refraction
 
-
-C:\ProgramData\Oracle\Java\javapath;
-C:\Python27;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;
-C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;
-C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;
-C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;
-C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;
-C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\CMake\bin
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
