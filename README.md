@@ -11,13 +11,13 @@ http://www.learnopengl.com/
 
 ************************************************************************************************************************
 [libs]
-glew-1.13.0
+3 glew-1.13.0
 
-glfw-3.1.1
+2 glfw-3.1.1
 
-glm-0.9.7.1
+1 glm-0.9.7.1
 
-soil
+0 soil
 
 ************************************************************************************************************************
 [Notions First]
@@ -55,11 +55,11 @@ Materials (12-20-2015)
 
 	#0 extensions specs
 	
-	https://www.opengl.org/registry/specs/EXT/framebuffer_object.txt
+		https://www.opengl.org/registry/specs/EXT/framebuffer_object.txt
 	
 	#1 opengl wiki
 	
-	https://www.opengl.org/wiki
+		https://www.opengl.org/wiki
 
 ************************************************************************************************************************
 Conceptions  (12-20-2015)
