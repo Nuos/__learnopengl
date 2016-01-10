@@ -1,28 +1,14 @@
 #version 330 core
-in vec2 TexCoords;
-
+in vec3 Normal;
+in vec3 Position;
 out vec4 color;
 
-uniform sampler2D texture1;
-
-float near = 1.0f;
-float far = 100.0f;
-
-float LinearizeDepth(float depth);
+uniform vec3 cameraPos;
+uniform samplerCube skybox;
 
 void main()
 {
-   color = texture(texture1, TexCoords);
-   //color = vec4(vec3(gl_FragCoord.z), 1.0f);
-
-   ////////////////////////////////
-   // visualizing the depth buffer
-   //float depth = LinearizeDepth(gl_FragCoord.z) / far; // divide by far for demonstration
-   //color = vec4(vec3(depth), 1.0f);
-}
-
-float LinearizeDepth(float depth)
-{
-  float z = depth * 2.0f - 1.0f; // back to NDC
-  return (2.0f * near * far) / (far + near - z * (far - near));
+   vec3 I = normalize(Position - cameraPos);
+   vec3 R = reflect(I, normalize(Normal));
+   color = texture(skybox, R);
 }
