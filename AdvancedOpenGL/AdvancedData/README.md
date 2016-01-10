@@ -160,7 +160,7 @@
 		What if we wanted to read and write data into two different buffers 
 		that are both vertex array buffers
 		
-		We can't bind two buffers at the same time to the same buffer target
+		We can't bind two buffers at the same  ime to the same buffer target
 		For this reason, and this reason alone
 		OpenGL gives us two more buffer targets called 
 								gl_copy_read_buffer-
